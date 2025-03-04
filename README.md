@@ -2,6 +2,11 @@
 
 This service is designed to serve as a package tracking software for residential complexes that recieve packages for their residents in a front office. It is intended to serve as a concise service that you can use to track packages in and out, look up packages, sort by name, sender, etc, and eventually send notifications to residents that they have packages to be picked up.
 
+***Please contact a developer for a `.env` file to run the app***
+
+## Running Local
+- To run locally, clone the repo, run `cd front-end` and then run `npm run st` to kick the app up. This will open the web-app (which you can close) and will open the Electron App as well.
+
 ## Jargon
 - A **Data Stack** is the Data Model, Controller, Service, and Repository for a specific db table.
 
@@ -17,7 +22,7 @@ This service is designed to serve as a package tracking software for residential
 - Look up packages by a specified date (i.e. 'Show me all packages from 3/1/2025')
 - Look up packages by a specified courier (i.e. 'Show me all packages from FedEx Ground')
 - X-Search; search using any of the above specified criteria (i.e. show me packages for John Doe on 3/1/2025 that shipped with FedEx Ground or USPS)
-- 
+
 ### Import and Export
 - Import resident names into the app using a .csv file. Templates will be available within the app, so you can download the template, fill it in, and upload it.
 - Integrations with Entrata and AppFolio; Use a rent roll or other consolidated report to import resident data.
@@ -106,7 +111,7 @@ This service is designed to serve as a package tracking software for residential
 - SpringBoot with Java makes up the API for DB interfacing
 - Maven for backend packages
 - NPM for frontend packages
-- 
+
 ## Planned Additions
 ### Messaging (Paid)
 - Send messages via email or SMS to notify residents that they have a package
@@ -116,4 +121,3 @@ This service is designed to serve as a package tracking software for residential
 
 ### Scanning (Paid)
 - Develop a basic mobile app that would enable scanning packages and instantly importing them to your database.
-
