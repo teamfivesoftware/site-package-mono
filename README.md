@@ -2,6 +2,9 @@
 
 This service is designed to serve as a package tracking software for residential complexes that recieve packages for their residents in a front office. It is intended to serve as a concise service that you can use to track packages in and out, look up packages, sort by name, sender, etc, and eventually send notifications to residents that they have packages to be picked up.
 
+## Jargon
+- A **Data Stack** is the Data Model, Controller, Service, and Repository for a specific db table.
+
 ## Feature Scope
 ### Package Traffic
 - Check packages in when they arrive; enter the resident's name, apartment number, date (defaults to today, but can be changed for packages received at end of day or on weekends, for example), courier (optional) and tracking number (optional) to store a package.
