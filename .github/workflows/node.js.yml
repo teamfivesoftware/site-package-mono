@@ -25,7 +25,7 @@ jobs:
         cache: 'npm'
         cache-dependency-path: front-end/package-lock.json  # <-- Explicitly set the path
 
-    - run: npm ci
+    - run: npm i
       working-directory: front-end  # <-- Set working directory
 
     # - run: npm run build --if-present
