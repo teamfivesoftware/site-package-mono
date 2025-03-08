@@ -94,7 +94,7 @@ public class RoleService {
                 .orElse(null);
 
         if (foundRole == null) {
-            return ResponseEntity.status(HttpStatus.NO_CONTENT).body(new Role().notFound());
+            return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
         }
         else {
             return ResponseEntity.ok().body(foundRole);
@@ -155,7 +155,7 @@ public class RoleService {
      * @param roleName The name of the role to disable
      * @return True on success, else false
      */
-    public ResponseEntity<Boolean> disableRole(String roleName) {
+    public ResponseEntity<Boolean> disableRole(String roleName) throws Exception {
         if (!isRoleExisting(roleName)) {
             return ResponseEntity.status(HttpStatus.NO_CONTENT).body(false);
         }
@@ -202,7 +202,7 @@ public class RoleService {
 
     }
 
-    public ResponseEntity<Boolean> enableRole(String roleName) {
+    public ResponseEntity<Boolean> enableRole(String roleName) throws Exception {
         if (!isRoleExisting(roleName)) {
             return ResponseEntity.status(HttpStatus.NO_CONTENT).body(false);
         } else {
