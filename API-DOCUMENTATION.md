@@ -4,9 +4,12 @@
 
 ## Auth
 ### Users
-- root/auth
+Path: `root/auth`
 
-#### Create User
+#### Create User (Register)
+
+`/register`
+
 | Header | Type | Required |
 | ------ | ---- | -------- |
 | `name` | String | yes |

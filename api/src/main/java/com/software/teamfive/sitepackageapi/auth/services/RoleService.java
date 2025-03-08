@@ -7,6 +7,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import java.util.Objects;
+
 @Service
 public class RoleService {
 
@@ -23,7 +25,13 @@ public class RoleService {
      * @param roleName The name to name the role
      * @return a created role.
      */
-    public ResponseEntity<Role> createRole(String roleName) {
+    public ResponseEntity<Role> createRole(String roleName) throws Exception {
+
+        Objects.requireNonNull(roleName);
+
+        if(roleName.isEmpty()) {
+            throw new Exception("Role name cannot be empty!");
+        }
 
         if (this.isRoleExisting(roleName)) {
             return ResponseEntity.status(HttpStatus.CONFLICT).build();
@@ -42,10 +50,16 @@ public class RoleService {
      * @param roleName The name to verify
      * @return true if it is already in the db, else false.
      */
-    public boolean isRoleExisting(String roleName) {
+    public boolean isRoleExisting(String roleName) throws Exception {
+        Objects.requireNonNull(roleName);
+
+        if(roleName.isEmpty()) {
+            throw new Exception("Role name is empty");
+        }
+
         return !this.roleRepository.findAll()
                 .stream()
-                .filter(r -> r.getRoleName().equalsIgnoreCase(roleName))
+                .filter(r -> r.getRoleName().equals(roleName))
                 .filter(r -> !r.isDeleted())
                 .toList()
                 .isEmpty();
